@@ -1,0 +1,70 @@
+
+   region: London (eu-west-2)   , ami: amazon2023
+
+   rds : MySQL free tier   and ec2 instance 
+
+   parameter store : check : .env file
+
+   iam permission : role which has s3 full access and ssm read only access to read parameter store 
+
+   rds security group will get  source traffic from ec2 instance security group
+
+       yum update -y
+    2  yum install httpd -y
+    3  systemctl start httpd
+    4  cd /var/www/html
+    5  ls
+    6  echo "hello" > index.html
+    7  yum search php
+    8  yum install install php php-mysql libapache2-mod-php -y
+    9  yum install php php-mysql libapache2-mod-php -y
+   10  sudo amazon-linux-extras enable php8.2
+   11  sudo yum install php php-cli php-common php-mysqlnd php-pdo php-mbstring php-xml php-json php-curl
+   12  php -v
+   13  vi index.php
+   14  mv index.html index.html.bak
+   15  ls
+   16  vi index.php
+   17  systemctl restart httpd
+   18  cd /home/ec2-user
+   19  ll
+   20  unzip composer.zip -d /var/www/html
+   21  cd /var/www/html
+   22  ll
+   23  cat script.js
+   24  ls
+   25  cat process.php
+   26  cat .env
+   27  ls -al
+   28  cat /etc/groups
+   29  cat /etc/group
+   30  ls -al
+         yum install composer  yum install composer
+   31  history
+
+
+Important 
+
+# Copy unzipped project to Apache root
+sudo cp -r ~/contact-form-app/* /var/www/html/
+cd /var/www/html
+
+#****  Install PHP dependencies
+composer install     ---> this will create a vendor folder very important
+
+
+# Set permissions
+sudo chown -R apache:apache /var/www/html
+sudo chmod -R 755 /var/www/html
+
+
+# compress all files including hidden files excluding vendor folder
+zip -r archive.zip /var/www/html -x "/var/www/html/vendor/*"
+
+
+# compress all files including hidden files excluding vendor folder
+zip -r archive.zip /var/www/html -x "/var/www/html/vendor/*"
+
+
+
+
